@@ -59,7 +59,7 @@ input[type="text"] {
   outline: none;
 }
 
-input ::placeholder {
+input::placeholder {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 900;
   color: #bdbdbd77;
@@ -69,11 +69,32 @@ input ::placeholder {
 
 #inputTitulo {
   border-bottom: 3px dotted black;
-  font-size: 30pt;
+  font-size: 35pt;
+}
+
+#inputDescricao::placeholder {
+  font-size: 25pt;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  color: #bdbdbd77;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.514);
+  text-align: center;
 }
 
 #inputDescricao {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  color: black;
   font-size: 20pt;
+  text-align: justify;
+  border: none;
+  outline: none;
+  resize: none;
+  width: 100%;
+  overflow: hidden;
+  min-height: 85px;
+  line-height: 1.1;
 }
 
 div#divButtons {

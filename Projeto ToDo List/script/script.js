@@ -1,9 +1,11 @@
-let btnSalvar = document.getElementById("btnSalvar");
+const btnSalvar = document.getElementById("btnSalvar");
 btnSalvar.addEventListener("click", salvarTarefa);
+const btnLimpar = document.getElementById("btnLimpar");
+btnLimpar.addEventListener("click", limparTarefa);
+const inputDescricao = document.getElementById("inputDescricao");
+inputDescricao.addEventListener("input", autoRedimensionamentoDescricao);
 
 const inputTitulo = document.getElementById("inputTitulo");
-const inputDescricao = document.getElementById("inputDescricao");
-const btnLimpar = document.getElementById("btnLimpar");
 const tarefasSalvas = document.getElementById("tarefasSalvas");
 
 function validacaoTitulo(titulo) {
@@ -14,9 +16,13 @@ function validacaoTitulo(titulo) {
   }
 }
 
+function autoRedimensionamentoDescricao() {
+  inputDescricao.style.height = "auto";
+  inputDescricao.style.height = inputDescricao.scrollHeight + "px";
+}
+
 function salvarTarefa() {
   const valueTitulo = inputTitulo.value;
-  const valueDescricao = inputDescricao.value;
   if (!validacaoTitulo(valueTitulo)) {
     alert("Preencha o titulo");
   } else {
@@ -55,7 +61,8 @@ function criarTarefa(titulo) {
 }
 
 function limparTarefa() {
-  let int = 0;
+  inputTitulo.value = "";
+  inputDescricao.value = "";
 }
 
 function removerTarefa() {
