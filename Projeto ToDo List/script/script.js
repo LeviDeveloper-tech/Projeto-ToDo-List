@@ -59,6 +59,9 @@ function criarTarefa(titulo) {
 
   //Dando funcionalidade ao botão delete da Div
   removeIcon.addEventListener("click", () => removerTarefa(divTarefa));
+  realizedCheck.addEventListener("change", () =>
+    tarefaRealizada(divTarefa, realizedCheck)
+  );
 }
 // Função de limpar os campos ao clicar no botão "Limpar"
 function limparTarefa() {
@@ -68,4 +71,16 @@ function limparTarefa() {
 
 function removerTarefa(tarefa) {
   tarefa.remove();
+}
+
+function tarefaRealizada(tarefa, checkbox) {
+  if (checkbox.checked) {
+    tarefa.style.backgroundColor = "#c2ff6e";
+    tarefa.style.color = "#426513";
+    tarefa.style.borderColor = "#426513";
+  } else {
+    tarefa.style.backgroundColor = "";
+    tarefa.style.color = "";
+    tarefa.style.borderColor = "";
+  }
 }

@@ -180,7 +180,7 @@ footer {
   background-color: transparent;
   width: 28px;
   height: 28px;
-  border: 3px solid #86c82b;
+  border: 3px solid #426513;
   border-radius: 8px;
   cursor: pointer;
   position: relative;
@@ -193,12 +193,12 @@ footer {
 }
 #realizedCheckbox:checked {
   background-color: #c2ff6e;
-  border-color: #6b9d28;
+  border-color: #426513;
 }
 #realizedCheckbox:checked::before {
   content: "\e5ca";
   font-family: "Material Symbols Outlined";
-  color: #6b9d28;
+  color: #426513;
   font-size: 30px;
   position: absolute;
   top: 50%;
