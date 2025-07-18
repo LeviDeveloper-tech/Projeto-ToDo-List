@@ -22,21 +22,28 @@ function autoRedimensionamentoDescricao() {
 //Função Salvar Tarefa
 function salvarTarefa() {
   const valueTitulo = inputTitulo.value;
+  const valueDescricao = inputDescricao.value;
   if (!validacaoTitulo(valueTitulo)) {
     alert("Preencha o titulo");
   } else {
-    criarTarefa(valueTitulo);
+    criarTarefa(valueTitulo, valueDescricao);
     inputTitulo.value = "";
     inputDescricao.value = "";
   }
 }
 // Cria a tarefa ao salvar
-function criarTarefa(titulo) {
+function criarTarefa(titulo, descricao) {
   let divTarefa = document.createElement("div");
   divTarefa.setAttribute("id", "divTarefa");
+  let divContent = document.createElement("div");
+  divContent.setAttribute("id", "divContent");
   let pTitulo = document.createElement("p");
   pTitulo.setAttribute("id", "pTitulo");
   pTitulo.textContent = `${titulo}`;
+  let pDescricao = document.createElement("p");
+  pDescricao.setAttribute("id", "pDescricao");
+  pDescricao.style.color = "#555";
+  pDescricao.textContent = `${descricao}`;
   let divIcons = document.createElement("div");
   divIcons.setAttribute("id", "divIcons");
   let realizedCheck = document.createElement("input");
@@ -51,7 +58,9 @@ function criarTarefa(titulo) {
 
   //Organizando pai e filhos
   tarefasSalvas.appendChild(divTarefa);
-  divTarefa.appendChild(pTitulo);
+  divTarefa.appendChild(divContent);
+  divContent.appendChild(pTitulo);
+  divContent.appendChild(pDescricao);
   divTarefa.appendChild(divIcons);
   divIcons.appendChild(realizedCheck);
   divIcons.appendChild(removeIcon);
@@ -78,9 +87,11 @@ function tarefaRealizada(tarefa, checkbox) {
     tarefa.style.backgroundColor = "#c2ff6e";
     tarefa.style.color = "#426513";
     tarefa.style.borderColor = "#426513";
+    pDescricao.style.color = "#426513";
   } else {
     tarefa.style.backgroundColor = "";
     tarefa.style.color = "";
     tarefa.style.borderColor = "";
+    pDescricao.style.color = "";
   }
 }

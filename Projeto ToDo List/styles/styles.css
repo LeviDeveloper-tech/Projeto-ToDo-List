@@ -165,14 +165,30 @@ footer {
   transform: scale(1.05);
 }
 
-#divTarefa div {
+#divIcons {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-#divTarefa p {
+#divContent {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+#pTitulo {
   font-size: 20pt;
+  font-weight: bold;
+  text-align: left;
+}
+
+#pDescricao {
+  font-size: 13px;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  word-break: break-word;
+  text-align: justify;
 }
 
 #realizedCheckbox {
